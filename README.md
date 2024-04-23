@@ -1,5 +1,5 @@
 # Decentralized Voting Application
-
+![image](https://github.com/nimisha-verma34/Blockchain-Based-Voting-Application/assets/143775866/864fc689-68e7-4c70-880f-d6748952ba97)
 ## Introduction
 
 This application leverages blockchain technology to provide a secure, transparent, and accessible voting system. It utilizes Ethereum smart contracts and interacts with the blockchain via the MetaMask extension.
