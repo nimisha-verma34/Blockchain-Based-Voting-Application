@@ -1,89 +1,105 @@
-# Decentralized Voting Application
+## Decentralized Voting Application
 
-![image](https://github.com/nimisha-verma34/Blockchain-Based-Voting-Application/assets/143775866/864fc689-68e7-4c70-880f-d6748952ba97)
+![Image](https://github.com/user-attachments/assets/5572b30c-47c5-431d-9c51-6c6a1ce0644d)
 
-## Introduction
+A blockchain-based voting system built on Ethereum to ensure transparency, security, and accessibility. It leverages *smart contracts, **Ethers.js, and **MetaMask* to allow users to cast and verify votes on the blockchain.
 
-This application leverages blockchain technology to provide a secure, transparent, and accessible voting system. It utilizes Ethereum smart contracts and interacts with the blockchain via the MetaMask extension.
+🔗 *Live Demo*: [https://blockchain-based-voting-application-ruu5.onrender.com/](https://blockchain-based-voting-application-ruu5.onrender.com/)
+
+---
+
+## Features
+
+- Secure, tamper-proof voting via smart contracts
+- MetaMask integration for user authentication and transaction signing
+- Live vote status and result updates
+- Simple UI served via Express server
+
+---
 
 ## Prerequisites
 
-- **Node.js**: Must be installed to run the server.
-- **MetaMask Extension**: Required for interacting with the Ethereum blockchain.
-- **Ethereum Account**: Necessary for deploying contracts and making transactions.
-- **Ethers.js**: Used to interact with Ethereum Blockchain from JavaScript.
-- **Solidity Compiler (optional)**: For compiling smart contracts locally.
+Before you begin, ensure you have the following installed:
 
-## Project Structure
+- *[Node.js](https://nodejs.org/)* – to run the backend server
+- *[MetaMask](https://metamask.io/)* – browser extension for Ethereum wallet interaction
+- *Ethereum Account* – for deploying and interacting with smart contracts
+- *Ethers.js* – for blockchain communication
+- *Solidity Compiler* – (optional) for contract compilation
 
-/project_root
-|-- /public
-| |-- /images
-| | |-- voter1.jpg
-| | |-- voter2.jpg
-| | -- voter7.jpg | |-- index.html | |-- main.js | -- style.css
-|-- /artifacts
-| -- contracts | |-- voter.sol | -- voter.json
-|-- package.json
-|-- index.js
-`-- .env
-
-
-- **/public**: This directory contains all the static files needed for the client-side of the application.
-  - **/images**: Stores images used in the application.
-  - **index.html**: The main HTML document.
-  - **main.js**: JavaScript file containing front-end logic.
-  - **style.css**: CSS file for styling the application.
-- **/artifacts/contracts**: Contains Ethereum smart contracts and their JSON metadata.
-  - **voter.sol**: Solidity smart contract for the voting system.
-  - **voter.json**: Compiled contract metadata for interfacing with the contract.
-- **package.json**: Node.js package definition file, which includes dependency information.
-- **index.js**: The main server-side JavaScript file to run the backend server.
-- **.env**: File containing environment variables to configure aspects like blockchain connection and keys.
+---
 
 ## Setup Instructions
 
-1. **Clone Repository**
-   - Clone the repository to your local machine or download the source code.
+### 1. Clone the Repository
 
-2. **Install Dependencies**
-   - Navigate to the project root in your terminal and execute:
-     ```bash
-     npm install express ethers dotenv express-fileupload
-     ```
+bash
+git clone https://github.com/nimisha-verma34/Blockchain-Based-Voting-Application.git
+cd Blockchain-Based-Voting-Application
 
-3. **Environment Variables**
-   - Create a `.env` file in the root directory with the following content:
-     ```plaintext
-     API_URL="https://<your_ethereum_node_api>"
-     PRIVATE_KEY="<your_private_key>"
-     CONTRACT_ADDRESS="<deployed_contract_address>"
-     ```
 
-4. **Running the Server**
-   - Start the server using:
-     ```bash
-     node index.js
-     ```
+### 2. Install Dependencies
+
+bash
+npm install express ethers dotenv express-fileupload
+
+
+### 3. Configure Environment Variables
+
+Create a .env file in the root with the following content:
+
+env
+API_URL=https://<your_ethereum_node_api>
+PRIVATE_KEY=<your_private_key>
+CONTRACT_ADDRESS=<deployed_contract_address>
+PORT=3000
+
+
+> ⚠*Never expose your private key publicly.* Use environment variables securely.
+
+### 4. Start the Server
+
+bash
+node index.js
+
+
+Your app will run at http://localhost:3000
+
+---
 
 ## Usage Guide
 
-1. **Connecting MetaMask**
-   - Use the 'Connect MetaMask' button in the web application to connect your Ethereum wallet.
+### Connect MetaMask
 
-2. **Casting a Vote**
-   - Input the index of your chosen candidate and click 'Cast Vote'. This will log your vote on the blockchain.
+- Click the *"Connect MetaMask"* button on the homepage.
+- Approve the connection request in your MetaMask wallet.
 
-3. **Checking Voting Status**
-   - Click the 'Check Voting Status' button to view the current voting status and results.
+### Cast a Vote
 
-## Additional Information
+- Enter the *candidate index* and click *"Cast Vote"*.
+- MetaMask will prompt you to confirm the transaction.
 
-- **Adding and Removing Candidates**: Integrated into the smart contract and accessible via specific contract functions.
-- **Security Considerations**: Ensure the private key in the server is securely stored and not publicly exposed.
+### Check Voting Status
+
+- Click the *"Check Voting Status"* button to fetch the latest results from the blockchain.
+
+---
+
+## Smart Contract Features
+
+- *Add/Remove Candidates* – Built into the voter.sol contract
+- *Vote Recording* – Immutable and secure
+- *Result Retrieval* – Real-time updates
+
+---
 
 ## Troubleshooting
 
-- Ensure all dependencies are installed and the Ethereum node API URL in the `.env` file is correct.
-- Check the browser console for any errors related to MetaMask or blockchain transactions.
+- *MetaMask Not Connected*  
+  → Ensure MetaMask is installed and you're connected to the correct network.
 
+- *Contract Not Working*  
+  → Verify that CONTRACT_ADDRESS in .env matches the deployed contract.
+
+- *Transaction Errors*  
+  → Check for gas limits, correct private key, and enough ETH in your account.
